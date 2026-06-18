@@ -1,0 +1,10 @@
+[Unit]
+Description=Rotate wallpapers using HydraPaper
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.config/systemd/user/wp-rotate.env
+ExecStart=/bin/bash -c '${WP_PROJECT_ROOT}/rotate-wp.sh'
+
+[Install]
+WantedBy=default.target
